@@ -718,6 +718,22 @@ halfTree(3)
 
 */
 
+console.log("\n==========Question 21==========");
+function halfTree (number) {
+    let tree = new Array(number);
+    let counter = 0;
+    let branchLevel = "";
+    for (let i = 0; i < tree.length; i++) {
+        counter = i + 1;
+        for (let v = 0; v < counter; v++) {
+            branchLevel += "*";
+        }
+        console.log(branchLevel)
+        branchLevel = "";
+    }
+}
+halfTree(5);
+
 /* EXERCISE 22
 
 Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
@@ -734,11 +750,43 @@ tree(3)
 
 */
 
+console.log("\n==========Question 22==========");
+function tree (number) {
+    let newTree = new Array(number);
+    let counter = 1;
+    let branchLevel = "";
+    let spaceCounter = number;
+    for (let i = 0; i < newTree.length; i++) {
+        for (let v = 0; v < counter; v++) {
+            branchLevel += "*";
+        }
+        for (let v = 0; v < spaceCounter; v++) {
+            branchLevel = " " + branchLevel;
+        }
+        console.log(branchLevel)
+        branchLevel = "";
+        counter += 2;
+        spaceCounter -= 1
+    }
+}
+tree(5);
+
 /* EXERCISE 23
 
 Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 
 */
+
+console.log("\n==========Question 23==========");
+function isItPrime (number) {
+    for(let i = 2, s = Math.sqrt(number); i <= s; i++)
+        if(number % i === 0) {
+            return false; 
+        }
+    return true;
+}
+console.log(isItPrime(11).toString());
+console.log(isItPrime(4).toString());
 
 /* WHEN YOU ARE FINISHED
 
