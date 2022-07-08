@@ -113,7 +113,12 @@ Write a function called whoIsBigger which receives 2 numbers as parameters and r
 
 */
 
-
+console.log("\n==========Question 2==========");
+function whoIsBigger (num1, num2) {
+    let result = Math.max(num1, num2);
+    return result;
+}
+console.log(whoIsBigger(3, 20).toString());
 
 /* EXERCISE 3
 
@@ -123,6 +128,13 @@ Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 
 */
 
+console.log("\n==========Question 3==========");
+function splitMe (string) {
+    let result = string.split(" ");
+    return result;
+}
+console.log(splitMe("I love coding"));
+
 /* EXERCISE 4
 
 Write a function called deleteOne which receives a string and a boolean as parameters.
@@ -130,6 +142,22 @@ Write a function called deleteOne which receives a string and a boolean as param
 If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 
 */
+
+console.log("\n==========Question 4==========");
+function deleteOne (string, boolean) {
+    let result;
+    if (boolean === true) {
+        result = string.split("");
+        result.shift();
+        return result.join("");
+    } else {
+        result = string.split("");
+        result.pop();
+        return result.join("");
+    }
+}
+console.log(deleteOne("hello", true));
+console.log(deleteOne("hello", false));
 
 /* EXERCISE 5
 
@@ -139,17 +167,41 @@ Ex.: onlyLetters("I have 4 dogs") => returns "I have dogs"
 
 */
 
+console.log("\n==========Question 5==========");
+function onlyLetters (string) {
+    let result = string.replace(/[0-9]/g, '');
+    return result;
+}
+console.log(onlyLetters("I have 2 dogs, one called 31345doggy314341 and the other 123183158315dog"));
+
 /* EXERCISE 6
 
 Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 
 */
 
+console.log("\n==========Question 6==========");
+function isThisAnEmail (string) {
+    let tester = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;  
+    return tester.test(string);
+}
+console.log(isThisAnEmail("cat").toString());
+console.log(isThisAnEmail("milesbb101@gmail.com").toString());
+
 /* EXERCISE 7
 
 Write a function called whatDayIsIt that should return the current day of the week.
 
 */
+
+console.log("\n==========Question 7==========");
+function whatDayIsIt() {
+    let day = new Date();
+    let week = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    let result = week[day.getDay()];
+    return result;
+}
+console.log(whatDayIsIt());
 
 /* EXERCISE 8
 
@@ -171,17 +223,57 @@ values: [3, 3, 4]
 
 */
 
+console.log("\n==========Question 8==========");
+function rollTheDices (number) {
+    let result = {
+        sum : 0,
+        values : Array()
+    }
+    let rand;
+    for (let i = 0; i < number + 1; i++) {
+        rand = dice();
+        result.sum += rand;
+        result.values[i] = rand;
+    }
+    return result;
+}
+console.log(rollTheDices(5));
+
 /* EXERCISE 9
 
 Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 
 */
 
+console.log("\n==========Question 9==========");
+function howManyDays (date) {
+    let currentDate = new Date();
+    let targetDate = new Date(date);
+    let difference = Math.abs(currentDate.getTime() - targetDate.getTime());
+    let daysDif = difference / (1000 * 60 * 60 * 24);
+    return daysDif;
+}
+let testDate = "Sept 24, 20 13:20:18";
+console.log(howManyDays(testDate).toString());
+
 /* EXERCISE 10
 
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
 
 */
+
+console.log("\n==========Question 10==========");
+function isTodayMyBirthday () {
+    let currentDate = new Date();
+    let day = currentDate.getDate;
+    let month = currentDate.getMonth;
+    if ((day === 22) && (month === 4)) {
+        return true;
+    } else {
+        return false
+    }
+}
+console.log(isTodayMyBirthday().toString());
 
 // JS Arrays & Objects
 
@@ -194,6 +286,8 @@ Write a function called deleteProp which receives an object and a string as para
 and returns the given object after deleting its property named as the given string.
 
 */
+
+
 
 /* EXERCISE 12
 
